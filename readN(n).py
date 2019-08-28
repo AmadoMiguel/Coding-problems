@@ -18,7 +18,6 @@ def readN(N,n,file):
     # bounds
     for i in range(0,n): # Number of portions to be extracted from the file
         if index+N < len(file):
-            print(index,index+N)
             portionsOfFile.append(file[index:index + N]) 
             index = index + N
         else:
@@ -29,5 +28,5 @@ def readN(N,n,file):
 # In this case, we will have a string instead of an external file
 
 file = '''This string is going to be used for the example instead of opening an
-       external file'''
-print(readN(3,15,file))       
+ external file'''
+print(readN(20,15,file))       
