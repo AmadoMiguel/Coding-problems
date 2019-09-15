@@ -23,11 +23,7 @@ public class AnagramStrings {
 //		Check if lists are equivalent
 		System.out.println(str1Chars);
 		System.out.println(str2Chars);
-		if (str1Chars.equals(str2Chars)) {
-			return true;
-		} else {
-			return false;
-		}
+		return str1Chars.equals(str2Chars);
 	}
 
 }
