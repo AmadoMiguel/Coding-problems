@@ -6,11 +6,11 @@ import java.util.List;
 public class NumsThatSumK {
 
 	public static void main(String[] args) {
-		List<List<Integer>> numsThatSumK = new ArrayList<List<Integer>>();
 		List<Integer> numsList = new ArrayList<Integer>();
 		numsList.add(1); numsList.add(2); numsList.add(3); numsList.add(4);
 		numsList.add(5); numsList.add(6);
-		List<List<Integer>> listOfOptionsThatSumK = findContiguousNums(numsList, 9, 0, numsThatSumK);
+		List<List<Integer>> listOfOptionsThatSumK = findContiguousNums(numsList, 9, 0, 
+																	 new ArrayList<List<Integer>>());
 		System.out.println(listOfOptionsThatSumK);
 	}
 	
