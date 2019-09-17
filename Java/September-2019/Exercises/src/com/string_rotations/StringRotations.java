@@ -19,7 +19,7 @@ public class StringRotations {
 		List<String> wordsOfSecondString = Arrays.asList(str2.split("(?=[A-Z])"));
 		return wordsOfSecondString.containsAll(wordsOfFirstString);
 	}
-	
+
 	public static String reverseWords(String str) {
 		List<String> words = Arrays.asList(str.split(" "));
 		String reversedWords = "";
@@ -33,7 +33,7 @@ public class StringRotations {
 			for (String l : letters) {
 				reversedWords += l;
 			}
-			if (w == words.get(words.size()-1)) {
+			if (w != words.get(words.size()-1)) {
 				reversedWords += " ";
 			}
 		}
