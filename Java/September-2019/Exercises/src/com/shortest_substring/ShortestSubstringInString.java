@@ -8,14 +8,12 @@ public class ShortestSubstringInString {
 
 	public static void main(String[] args) {
 		List<String> shortestSubstring = shortestSubstringInString("armariakhuoheasilo",
-																    Arrays.asList("aio".split("")), 
-																    new ArrayList<List<String>>(), 0);
+				Arrays.asList("aio".split("")), new ArrayList<List<String>>(), 0);
 		System.out.println(shortestSubstring);
 	}
 	
 	public static List<String> shortestSubstringInString(String str, List<String> chars,
-														List<List<String>> allSubstringsWithChars,
-														int index) {
+			List<List<String>> allSubstringsWithChars, int index) {
 //		Create new list that is supposed to contain the substring with chars
 		List<String> subStr = new ArrayList<String>();
 //		Define array of the string from the current index
