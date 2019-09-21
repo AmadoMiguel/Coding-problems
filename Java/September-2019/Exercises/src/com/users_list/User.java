@@ -1,6 +1,6 @@
 package com.users_list;
 
-public class User {
+public class User implements Comparable<User> {
 	private int id;
 	private String firstName;
 	private String lastName;
@@ -78,6 +78,10 @@ public class User {
 		} else if (!lastName.equals(other.lastName))
 			return false;
 		return true;
+	}
+	@Override
+	public int compareTo(User arg0) {
+		return this.id - arg0.getId();
 	}
 	
 }

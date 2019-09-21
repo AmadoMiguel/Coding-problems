@@ -14,8 +14,8 @@ public class UsersInQueue {
 //		Add users in any order
 		users.add(user2);
 		users.add(user4);
-		users.add(user1);
 		users.add(user3);
+		users.add(user1);
 		System.out.println(users);
 //		Users will be ordered by age (that's how is defined in the overriden compare method in the
 //		UsersOrdering class which implements the Comparator interface)

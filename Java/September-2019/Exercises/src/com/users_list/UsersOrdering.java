@@ -8,7 +8,7 @@ public class UsersOrdering implements Comparator<User> {
 //	of objects
 	@Override
 	public int compare(User arg0, User arg1) {
-		return arg0.getAge() - arg1.getAge();
+		return arg0.getId() - arg1.getId();
 	}
 	
 }
