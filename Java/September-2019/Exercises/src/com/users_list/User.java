@@ -81,7 +81,11 @@ public class User implements Comparable<User> {
 	}
 	@Override
 	public int compareTo(User arg0) {
-		return this.id - arg0.getId();
+		if (this.getId() > arg0.getId()) {
+			return 1;
+		} else {
+			return -1;
+		}
 	}
 	
 }
