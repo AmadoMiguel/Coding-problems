@@ -33,6 +33,8 @@ def collectCoinsInPath(matrix, currRow, currCol, currentTotal, maxTotal):
     return maxTotal
 
 
-print(findPathWithMaxNumOfCoins(np.array([[0, 3, 1, 1],
-                                          [2, 8, 6, 4],
-                                          [1, 5, 2, 1]])))
+print(findPathWithMaxNumOfCoins(np.array([[0, 3, 1, 1, 4],
+                                          [2, 8, 6, 4, 3],
+                                          [1, 5, 2, 1, 2],
+                                          [2, 8, 6, 4, 3],
+                                          [1, 5, 2, 1, 2]])))
