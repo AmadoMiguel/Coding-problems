@@ -1,30 +1,30 @@
 
-# Append each one of the elements to the number initialized inside a list in order
-# to return the combinations for that number
-def appendElem(num, arr):
-    combs = []
-    numAsList = [num]
-    for i in arr:
-        numAsList.append(i)
-        combs.append(numAsList)
-        numAsList = [num]
-    return combs
 
-# All combinations will be stored in this list
-allCombs = []
-# This function will store combination of the numbers of each list
-def listsCombo(listOfLists, indexOfList):
-    # Make the combinations array global
-    global allCombs
-    # If there is other list in the listOfLists after the current index position
-    if indexOfList+1 < len(listOfLists):
-        for i in listOfLists[indexOfList]:
-            allCombs.append(appendElem(i, listOfLists[indexOfList+1]))
-        if indexOfList + 1 == len(listOfLists)-1:
-            return allCombs
-        else:
-            listsCombo(listOfLists, indexOfList+1)
+def listsCombo(listOfLists, ptr1, ptr2):
+    return findAllCombinations(listOfLists, ptr1, ptr2, [], [])
+
+
+def findAllCombinations(allLists, p1, p2, currentCombo, allCombos):
+    if p1 >= 0 and p2 >= 0:
+        # Add number to current combination
+        currentCombo.append(allLists[p1][p2])
+        # New combination found
+        if len(currentCombo) == len(allLists):
+            allCombos.append(list(reversed(currentCombo)))
+        # Analise next possible combination options
+        nextOptions = [[p1 - 1, len(allLists[p1 - 1]) - 1], [p1, p2 - 1]]
+        for o in nextOptions:
+            if o[0] >= 0 and o[1] >= 0:
+                allCombos = findAllCombinations(allLists, o[0], o[1], currentCombo, allCombos)
+            else:
+                if len(currentCombo):
+                    del currentCombo[-1]
+    return allCombos
+
 
 # Get all combinations of these two lists
-arr = [[1, 2, 3], [4, 5, 6]]
-print(listsCombo(arr,0))
+# arr = [[1, 2, 3], [4, 5, 6], [6], [7, 8]]
+# arr = [[1, 2, 3], [4, 5, 6]]
+arr = [[1, 2, 3], [4], [7, 9], [5, 8]]
+finalPtr1, finalPtr2 = len(arr) - 1, len(arr[-1]) - 1
+print(listsCombo(arr, finalPtr1, finalPtr2))
