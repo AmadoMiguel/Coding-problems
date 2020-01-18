@@ -8,24 +8,18 @@
 # Bonus: Find an O(log N) solution if k = 2.
 
 
-def findExecutionsOrder(prisoners, k):
-    executions = []
-    ptrPrisoner = k
-    currExec = k + 1
-    lenPris = len(prisoners)
-    while len(executions) < lenPris:
-        while currExec < k + 1:
-            ptrPrisoner += 1
-            if ptrPrisoner >= len(prisoners):
-                ptrPrisoner = 0
-            if prisoners[ptrPrisoner] not in executions:
-                currExec += 1
-        currPris = prisoners[ptrPrisoner]
-        currExec = 0
-        executions += [currPris]
-    return executions, executions[-1]
+def findLastExecutedPrisoner(prisoners, k):
+    ptrExec = k
+    while len(prisoners) > 1:
+        print(prisoners)
+        prisoners.pop(ptrExec)
+        ptrExec += k
+        if ptrExec >= len(prisoners):
+            ptrExec = ptrExec - len(prisoners)
+    # Last prisoner to be executed
+    return prisoners
 
 
-N = 6
-k = 3
-print(findExecutionsOrder(range(1, N + 1), k - 1))
+N = 5
+k = 2
+print(findLastExecutedPrisoner(list(range(1, N + 1)), k - 1))
