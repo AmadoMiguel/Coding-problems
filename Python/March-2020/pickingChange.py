@@ -9,8 +9,7 @@ def pickMaxChange(mtx, mtxLen, mtxRowLen, currPos, currChange):
     ]:
         if 0 <= pos[0] < mtxLen and 0 <= pos[1] < mtxRowLen:
             pickMaxChange(mtx, mtxLen, mtxRowLen, pos, currChange + mtx[pos[0]][pos[1]])
-        else:
-            print(currChange)
+        elif currPos[0] == mtxLen - 1 and currPos[1] == mtxRowLen - 1:
             if pickMaxChange.maxChange is None or currChange > pickMaxChange.maxChange:
                 pickMaxChange.maxChange = currChange
 
