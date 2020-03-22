@@ -12,7 +12,7 @@ def findNumBoats(weights, k):
         placedPerson = False
         if boatsEmpty:
             boats += [w]
-            boats = False
+            boatsEmpty = False
         else:
             indx = 0
             while indx < len(boats):
@@ -23,8 +23,9 @@ def findNumBoats(weights, k):
                 indx += 1
             if not placedPerson:
                 boats += [w]
+    print("Distributed weight: ", boats)
     return len(boats)
 
 
-peopleWeights = [100, 200, 150, 80]
-findNumBoats(peopleWeights, 200)
+peopleWeights = [100, 200, 150, 80, 40, 10, 10, 5, 5]
+assert findNumBoats(peopleWeights, 200) == 3  # True
