@@ -12,22 +12,10 @@ def longestIncreasingSubsequence(sequence):
             longestSub.append(n)
             numElems += 1
         else:
-            if numElems == 1:
-                if n < longestSub[0]:
-                    longestSub[0] = n
-            else:
-                for i in range(numElems):
-                    if i == 0:
-                        if n < longestSub[i] and n < longestSub[i + 1]:
-                            longestSub[i] = n
-                            break
-                    elif i == numElems - 1:
-                        if longestSub[i - 1] < n < longestSub[i]:
-                            longestSub[i] = n
-                            break
-                    elif n < longestSub[i] and longestSub[i - 1] < n < longestSub[i + 1]:
-                        longestSub[i] = n
-                        break
+            for i in range(numElems):
+                if n <= longestSub[i]:
+                    longestSub[i] = n
+                    break
     print(longestSub)
     return numElems
 
